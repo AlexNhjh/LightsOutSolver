@@ -7,9 +7,7 @@ ctk.set_default_color_theme("blue")
 
 import numpy as np
 
-print('hey')
-
-fivebyfivesolver = np.array([
+fivebyfivesolverkm = np.array([
     [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -37,6 +35,34 @@ fivebyfivesolver = np.array([
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1]
 ])
 
+
+fivebyfivesolvernm = np.array([
+    [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1]
+])
 
 
 
@@ -116,19 +142,36 @@ class App(ctk.CTk):
             self.result_label.configure(text="Solving is only implemented for 5x5!", text_color="orange")
             return
 
-        print(self.matrix)
-        self.matrix = np.array(self.matrix)
-        # Flatten the 5x5 matrix to a column vector
+        if self.current_mode == "Knight's Move":
+            print(self.matrix)
+            self.matrix = np.array(self.matrix)
+            # Flatten the 5x5 matrix to a column vector
 
-        matrix_to_column = self.matrix.flatten().reshape(-1, 1)
-        #matrix_to_column = np.array(matrix_to_column).reshape(-1, 1)
-        modulus = 2
-        matrix_to_column_mod2 = matrix_to_column % 2
-        fivebyfivesolver_mod2 = fivebyfivesolver % 2
-        result_matrix = self.gaussian_elimination_mod2(fivebyfivesolver_mod2, matrix_to_column_mod2)
+            matrix_to_column = self.matrix.flatten().reshape(-1, 1)
+            #matrix_to_column = np.array(matrix_to_column).reshape(-1, 1)
+            modulus = 2
+            matrix_to_column_mod2 = matrix_to_column % 2
+            fivebyfivesolverkm_mod2 = fivebyfivesolverkm % 2
+            result_matrix = self.gaussian_elimination_mod2(fivebyfivesolverkm_mod2, matrix_to_column_mod2)
 
-        # Display the result
-        self.display_result_matrix(result_matrix)
+            # Display the result
+            self.display_result_matrix(result_matrix)
+        if self.current_mode == "Normal Mode":
+            self.matrix = np.array(self.matrix)
+            # Flatten the 5x5 matrix to a column vector
+
+            matrix_to_column = self.matrix.flatten().reshape(-1, 1)
+            # matrix_to_column = np.array(matrix_to_column).reshape(-1, 1)
+            modulus = 2
+            matrix_to_column_mod2 = matrix_to_column % 2
+            fivebyfivesolvernm_mod2 = fivebyfivesolvernm % 2
+            result_matrix = self.gaussian_elimination_mod2(fivebyfivesolvernm_mod2, matrix_to_column_mod2)
+
+            # Display the result
+            self.display_result_matrix(result_matrix)
+        else:
+            self.result_label.configure(text="Solving is only implemented for 5x5!", text_color="orange")
+            return
 
     def gaussian_elimination_mod2(self, A, b):
         n = len(b)
