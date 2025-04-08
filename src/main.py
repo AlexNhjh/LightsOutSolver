@@ -7,6 +7,8 @@ ctk.set_default_color_theme("blue")
 
 import numpy as np
 
+print('hey')
+
 fivebyfivesolver = np.array([
     [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
