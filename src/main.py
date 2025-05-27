@@ -5,7 +5,6 @@ import numpy as np
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
-import numpy as np
 
 fivebyfivesolverkm = np.array([
     [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -35,7 +34,6 @@ fivebyfivesolverkm = np.array([
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1]
 ])
 
-print('hey')
 
 fivebyfivesolvernm = np.array([
     [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
