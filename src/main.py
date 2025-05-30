@@ -83,7 +83,19 @@ class App(ctk.CTk):
             self.result_label.configure(text="Solving is only implemented for 5x5!", text_color="orange")
             return
 
-        elif self.current_mode == "Knight's Move":
+        if self.current_mode == "Knight's Move":
+
+            match self.size_dropdown.get():
+                case "3x3":
+                    solverkm_mod2 = matrices.threebythreesolverkm % 2
+                case "4x4":
+                    solverkm_mod2 = matrices.fourbyfoursolverkm % 2
+                case "5x5":
+                    solverkm_mod2 = matrices.fivebyfivesolverkm % 2
+                case "6x6":
+                    solverkm_mod2 = matrices.sixbysixsolverkm % 2
+                case "7x7":
+                    solverkm_mod2 = matrices.sevenbysevensolverkm % 2
 
             self.matrix = np.array(self.matrix)
             # Flatten the 5x5 matrix to a column vector
@@ -93,11 +105,28 @@ class App(ctk.CTk):
 
             matrix_to_column_mod2 = matrix_to_column % 2
             fivebyfivesolverkm_mod2 = matrices.fivebyfivesolverkm % 2
-            result_matrix = self.gaussian_elimination_mod2(fivebyfivesolverkm_mod2, matrix_to_column_mod2)
+            result_matrix = self.gaussian_elimination_mod2(solverkm_mod2, matrix_to_column_mod2)
 
             # Display the result
             self.display_result_matrix(result_matrix)
-        elif self.current_mode == "Normal Mode":
+
+
+
+
+        if self.current_mode == "Normal Mode":
+
+            match self.size_dropdown.get():
+                case "3x3":
+                    solvernm_mod2 = matrices.threebythreesolvernm % 2
+                case "4x4":
+                    solvernm_mod2 = matrices.fourbyfoursolvernm % 2
+                case "5x5":
+                    solvernm_mod2 = matrices.fivebyfivesolvernm % 2
+                case "6x6":
+                    solvernm_mod2 = matrices.sixbysixsolvernm % 2
+                case "7x7":
+                    solvernm_mod2 = matrices.sevenbysevensolvernm % 2
+
             self.matrix = np.array(self.matrix)
             # Flatten the 5x5 matrix to a column vector
 
@@ -105,13 +134,13 @@ class App(ctk.CTk):
             # matrix_to_column = np.array(matrix_to_column).reshape(-1, 1)
             modulus = 2
             matrix_to_column_mod2 = matrix_to_column % 2
-            fivebyfivesolvernm_mod2 = matrices.fivebyfivesolvernm % 2
-            result_matrix = self.gaussian_elimination_mod2(fivebyfivesolvernm_mod2, matrix_to_column_mod2)
+            solvernm_mod2 = matrices.solvernm % 2
+            result_matrix = self.gaussian_elimination_mod2(solvernm_mod2, matrix_to_column_mod2)
 
             # Display the result
             self.display_result_matrix(result_matrix)
         else:
-            self.result_label.configure(text="Solving is only implemented for 5x5!", text_color="orange")
+            self.result_label.configure(text="an error occured!", text_color="red")
             return
 
 
