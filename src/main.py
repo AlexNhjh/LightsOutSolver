@@ -1,69 +1,10 @@
 import customtkinter as ctk
 import random
 import numpy as np
+import matrices
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
-
-
-fivebyfivesolverkm = np.array([
-    [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
-    [1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0],
-    [0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0],
-    [0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1],
-    [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
-    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0],
-    [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1]
-])
-
-
-fivebyfivesolvernm = np.array([
-    [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1]
-])
-
-
 
 class App(ctk.CTk):
     def __init__(self):
@@ -137,25 +78,26 @@ class App(ctk.CTk):
 
     def solve_solution(self):
         # Ensure the matrix is 5x5
+
         if len(self.matrix) != 5 or len(self.matrix[0]) != 5:
             self.result_label.configure(text="Solving is only implemented for 5x5!", text_color="orange")
             return
 
-        if self.current_mode == "Knight's Move":
-            print(self.matrix)
+        elif self.current_mode == "Knight's Move":
+
             self.matrix = np.array(self.matrix)
             # Flatten the 5x5 matrix to a column vector
 
             matrix_to_column = self.matrix.flatten().reshape(-1, 1)
             #matrix_to_column = np.array(matrix_to_column).reshape(-1, 1)
-            modulus = 2
+
             matrix_to_column_mod2 = matrix_to_column % 2
-            fivebyfivesolverkm_mod2 = fivebyfivesolverkm % 2
+            fivebyfivesolverkm_mod2 = matrices.fivebyfivesolverkm % 2
             result_matrix = self.gaussian_elimination_mod2(fivebyfivesolverkm_mod2, matrix_to_column_mod2)
 
             # Display the result
             self.display_result_matrix(result_matrix)
-        if self.current_mode == "Normal Mode":
+        elif self.current_mode == "Normal Mode":
             self.matrix = np.array(self.matrix)
             # Flatten the 5x5 matrix to a column vector
 
@@ -163,7 +105,7 @@ class App(ctk.CTk):
             # matrix_to_column = np.array(matrix_to_column).reshape(-1, 1)
             modulus = 2
             matrix_to_column_mod2 = matrix_to_column % 2
-            fivebyfivesolvernm_mod2 = fivebyfivesolvernm % 2
+            fivebyfivesolvernm_mod2 = matrices.fivebyfivesolvernm % 2
             result_matrix = self.gaussian_elimination_mod2(fivebyfivesolvernm_mod2, matrix_to_column_mod2)
 
             # Display the result
@@ -171,6 +113,15 @@ class App(ctk.CTk):
         else:
             self.result_label.configure(text="Solving is only implemented for 5x5!", text_color="orange")
             return
+
+
+
+
+    # Set solver matrix equal to the column vector representation of the board state
+    # Row reducing the equation Ax = b gives the resulting vector. This resulting vector
+    # contains the solution to the puzzle. First, it must be cast back (for example, in the 5x5
+    # puzzle case, the resulting vector is of length 25. When it is cast to 5x5, it contains the
+    # resulting matrix that can be seen when we press the "solve" button
 
     def gaussian_elimination_mod2(self, A, b):
         n = len(b)
@@ -180,7 +131,7 @@ class App(ctk.CTk):
 
         # Perform Gaussian elimination
         for i in range(n):
-            # Make the diagonal element 1 (pivoting step, if necessary)
+            # Make the diagonal element 1
             if augmented[i, i] == 0:
                 # Try to swap rows if necessary
                 for j in range(i + 1, n):
@@ -218,7 +169,7 @@ class App(ctk.CTk):
 
         # Display the result matrix as buttons
         button_size = 50
-        col = 0
+
         for row in range(len(result_matrix)):
             for col in range(len(result_matrix[row])):
                 btn = ctk.CTkButton(result_frame,
@@ -237,16 +188,11 @@ class App(ctk.CTk):
 
 
     def generate_matrix(self, size):
-        """
-        Generate a new matrix of the given size.
-        """
         self.matrix = [[random.randint(0, 1) for _ in range(size)] for _ in range(size)]
-
+        print(self.matrix)
 
     def display_matrix(self):
-        """
-        Display the current matrix without regenerating it.
-        """
+
         # Clear the matrix display
         for widget in self.matrix_frame.winfo_children():
             widget.destroy()
@@ -261,6 +207,8 @@ class App(ctk.CTk):
                                     height=button_size,
                                     fg_color=['#eab5b5',"#1bf9fc"][self.matrix[row][col]],  # Blue or Red
                                     command=lambda r=row, c=col: self.apply_move(r, c))
+
+                print(self.matrix)
                 btn.grid(row=row, column=col, padx=5, pady=5)
 
     def set_mode(self, selected_mode):
