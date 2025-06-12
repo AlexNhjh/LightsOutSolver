@@ -6,7 +6,7 @@ import matrices
 
 
 # adjust fivebyfivesolvernm to see different matrices!
-matrix_np = np.array(matrices.sixbysixsolverkm)
+matrix_np = np.array(matrices.fourbyfoursolverkm)
 
 # Display the matrix with black (0) and white (1)
 plt.imshow(matrix_np, cmap='gray', interpolation='nearest')

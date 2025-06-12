@@ -91,7 +91,7 @@ class App(ctk.CTk):
                 case "3x3":
                     solverkm_mod2 = matrices.threebythreesolverkm % 2
                 case "4x4":
-                    print(self.size_dropdown.get())
+
                     solverkm_mod2 = matrices.fourbyfoursolverkm % 2
                 case "5x5":
                     solverkm_mod2 = matrices.fivebyfivesolverkm % 2
@@ -108,7 +108,7 @@ class App(ctk.CTk):
 
             matrix_to_column_mod2 = matrix_to_column % 2
             fivebyfivesolverkm_mod2 = matrices.fivebyfivesolverkm % 2
-            print(len(solverkm_mod2))
+
             result_matrix = self.gaussian_elimination_mod2(solverkm_mod2, matrix_to_column_mod2)
 
             # Display the result
@@ -222,7 +222,7 @@ class App(ctk.CTk):
 
     def generate_matrix(self, size):
         self.matrix = [[random.randint(0, 1) for _ in range(size)] for _ in range(size)]
-        print(self.matrix)
+
 
     def display_matrix(self):
 
@@ -241,7 +241,6 @@ class App(ctk.CTk):
                                     fg_color=['#eab5b5',"#1bf9fc"][self.matrix[row][col]],  # Blue or Red
                                     command=lambda r=row, c=col: self.apply_move(r, c))
 
-                print(self.matrix)
                 btn.grid(row=row, column=col, padx=5, pady=5)
 
     def set_mode(self, selected_mode):
