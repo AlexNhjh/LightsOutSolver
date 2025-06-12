@@ -79,16 +79,19 @@ class App(ctk.CTk):
     def solve_solution(self):
         # Ensure the matrix is 5x5
 
-        if len(self.matrix) != 5 or len(self.matrix[0]) != 5:
+        '''if len(self.matrix) != 5 or len(self.matrix[0]) != 5:
             self.result_label.configure(text="Solving is only implemented for 5x5!", text_color="orange")
-            return
+            return'''
+
+        global solverkm_mod2
+        global solvernm_mod2
 
         if self.current_mode == "Knight's Move":
-
             match self.size_dropdown.get():
                 case "3x3":
                     solverkm_mod2 = matrices.threebythreesolverkm % 2
                 case "4x4":
+                    print(self.size_dropdown.get())
                     solverkm_mod2 = matrices.fourbyfoursolverkm % 2
                 case "5x5":
                     solverkm_mod2 = matrices.fivebyfivesolverkm % 2
@@ -105,6 +108,7 @@ class App(ctk.CTk):
 
             matrix_to_column_mod2 = matrix_to_column % 2
             fivebyfivesolverkm_mod2 = matrices.fivebyfivesolverkm % 2
+            print(len(solverkm_mod2))
             result_matrix = self.gaussian_elimination_mod2(solverkm_mod2, matrix_to_column_mod2)
 
             # Display the result
@@ -134,7 +138,7 @@ class App(ctk.CTk):
             # matrix_to_column = np.array(matrix_to_column).reshape(-1, 1)
             modulus = 2
             matrix_to_column_mod2 = matrix_to_column % 2
-            solvernm_mod2 = matrices.solvernm % 2
+
             result_matrix = self.gaussian_elimination_mod2(solvernm_mod2, matrix_to_column_mod2)
 
             # Display the result
@@ -178,8 +182,8 @@ class App(ctk.CTk):
         for i in range(n - 1, -1, -1):
             solution[i] = augmented[i, -1] - np.dot(augmented[i, :-1], solution) % 2
 
-        solution.reshape(5,5)
-        sol = solution.reshape(5, 5).astype(int).tolist()  # Convert to Python list of lists
+        solution.reshape(len(self.matrix), len(self.matrix))
+        sol = solution.reshape(len(self.matrix), len(self.matrix)).astype(int).tolist()  # Convert to Python list of lists
 
         return sol
 
